@@ -16,7 +16,6 @@ client = discord.Client(intents=intents)
 
 class Recipe_Select(discord.ui.Select):
     def __init__(self, thread) -> None:
-        # TODO: use constants for list of recipes, maybe store this list of options in another file
         super().__init__(placeholder="Select a recipe", options=recipes.options)
         self.thread = thread
 
@@ -86,7 +85,7 @@ async def on_thread_create(thread):
     view = discord.ui.View() #TODO: set timeout
     view.add_item(select)
 
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.5) # wait 0.5s to prevent sending message before thread creator
     await thread.send("Hi, I might be able to help you host this party. What do you want to cook?", view = view, suppress = True)
 
 client.run(os.getenv('TOKEN'))

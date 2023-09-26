@@ -3,7 +3,7 @@ class Party:
         # recipe
         self.recipe = ""
 
-        # post template to update with selected roles
+        # signup sheet to update with selected roles
         self.post_template = ""
 
         # message id of the signup sheet
