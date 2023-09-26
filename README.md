@@ -8,11 +8,20 @@ When a player creates a new thread in a forum channel, the bot will prompt the u
 
 ## Bot Setup
 Follow the [pycord guide](https://guide.pycord.dev/getting-started/creating-your-first-bot) to set up your discord bot.
+
 ### OAuth2
 - Scope: bot
 - Permissions: Send Messages, Send Messages in Threads
+
 ### Privileged Gateway Intents
 Select *Message Content Intent*
+
+### .env File
+To protect the bot secret, the bot's TOKEN is not included in this repository. Your bot will have its own TOKEN. To include this token into the project and make your code work you will need to create a .env file with the following:
+```
+TOKEN = YOURtokenHERE
+```
+ This gets handled in the main.py script with 	`load_dotenv()`
 
 ### In Your Server
 Consider only giving the bot permission to the forum channel where you want it to participate. Otherwise it will send recipe prompts in other threads.
